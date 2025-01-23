@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start:frontend": "npm run start --prefix apps/frontend",
-    "start:backend": "npm run start --prefix apps/backend",
+    "start:backend": "npm run start:dev --prefix apps/backend",
     "build:frontend": "npm run build --prefix apps/frontend",
     "build:backend": "npm run build --prefix apps/backend",
     "start": "concurrently --prefix '[{name}]' --names 'ANGULAR,NEST' \"npm run start:frontend\" \"npm run start:backend\"",
