@@ -1,7 +1,8 @@
 import { Routes } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
-import { PokedexComponent } from "./pokedex/pokedex.component";
+import { HomeComponent } from "./routes/home/home.component";
+import { NotFoundComponent } from "./routes/not-found/not-found.component";
+import { ViewPokedexComponent } from "./routes/view-pokedex/view-pokedex.component";
+import { AddPokedexComponent } from "./routes/add-pokedex/add-pokedex.component";
 
 export const routes: Routes = [
   {
@@ -10,7 +11,11 @@ export const routes: Routes = [
   },
   {
     path: "pokedex/:id",
-    component: PokedexComponent,
+    component: ViewPokedexComponent,
+  },
+  {
+    path: "add-pokedex",
+    component: AddPokedexComponent,
   },
   {
     path: "**",

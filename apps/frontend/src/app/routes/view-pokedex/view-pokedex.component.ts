@@ -1,17 +1,17 @@
 import { Component } from "@angular/core";
-import { HeaderComponent } from "../shared/header/header.component";
+import { HeaderComponent } from "../../shared/header/header.component";
 import { HttpClient } from "@angular/common/http";
 import { Pokedex } from "@frontend/typings";
 import { ActivatedRoute } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 @Component({
-  selector: "app-pokedex",
+  selector: "app-view-pokedex",
   standalone: true,
   imports: [HeaderComponent, CommonModule],
-  templateUrl: "./pokedex.template.html",
+  templateUrl: "./view-pokedex.template.html",
 })
-export class PokedexComponent {
+export class ViewPokedexComponent {
   pokedex: Pokedex | null = null;
   id: number;
 
