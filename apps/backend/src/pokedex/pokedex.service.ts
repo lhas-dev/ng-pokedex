@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CreatePokedexDto, UpdatePokedexDto } from './pokedex.controller';
 import { Pokedex } from './pokedex.entity';
 import { PokeapiService, PokemonResponse } from '../pokeapi/pokeapi.service';
 import { firstValueFrom } from 'rxjs';
+import { CreatePokedexDto, UpdatePokedexDto } from './pokedex.dto';
 
 @Injectable()
 export class PokedexService {

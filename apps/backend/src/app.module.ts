@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { PokeapiService } from './pokeapi/pokeapi.service';
 import { HttpModule } from '@nestjs/axios';
 import { PokemonController } from './pokemon/pokemon.controller';
@@ -19,8 +17,8 @@ import { Pokedex } from './pokedex/pokedex.entity';
       synchronize: true,
     }),
   ],
-  controllers: [AppController, PokemonController, PokedexController],
-  providers: [AppService, PokeapiService, PokedexService],
-  exports: [PokeapiService],
+  controllers: [PokemonController, PokedexController],
+  providers: [PokeapiService, PokedexService],
+  exports: [PokeapiService, PokedexService],
 })
 export class AppModule {}

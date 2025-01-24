@@ -8,16 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { PokedexService } from './pokedex.service';
-
-export interface CreatePokedexDto {
-  name: string;
-  pokemons: string[];
-}
-
-export interface UpdatePokedexDto {
-  name: string;
-  pokemons: string[];
-}
+import { CreatePokedexDto, UpdatePokedexDto } from './pokedex.dto';
 
 @Controller('pokedex')
 export class PokedexController {

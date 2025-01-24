@@ -107,34 +107,13 @@ The frontend is built with **Angular** and provides an interactive UI to browse,
 - **Reactive Forms**: Simplifies form handling and validation.
 - **Debounced Search**: Enhances search performance and minimizes unnecessary backend calls.
 
-### File Structure
-
-```
-apps/
-  frontend/
-    src/
-      app/
-        components/
-        services/
-        models/
-```
-
 ---
 
 ## Backend Overview
 
 The backend is powered by **NestJS** and handles the core data operations for the Pokédex application. It uses **TypeORM** with the Active Record pattern to interact with the SQLite database.
 
-### File Structure
-
-```
-apps/
-  backend/
-    src/
-      controllers/
-      entities/
-      services/
-```
+---
 
 ### API Endpoints ✨
 
