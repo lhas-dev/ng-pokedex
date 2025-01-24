@@ -45,19 +45,19 @@ Welcome to **Pokédex**, a monorepo project built to showcase a comprehensive Po
 
 ### Frontend
 
-![Angular](https://angular.io/assets/images/logos/angular/angular.svg){width=60px}
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" width="60px">
 
 ### Backend
 
-![NestJS](https://nestjs.com/img/logo_text.svg){width=60px}
+<img src="https://nestjs.com/img/logo_text.svg" alt="NestJS" width="60px">
 
 ### Database
 
-![SQLite](https://sqlite.org/images/sqlite370_banner.gif){width=60px}
+<img src="https://sqlite.org/images/sqlite370_banner.gif" alt="SQLite" width="60px">
 
 ### Monorepo Management
 
-![Yarn](https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png){width=60px}
+<img src="https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png" alt="Yarn" width="60px">
 
 ---
 
@@ -138,13 +138,13 @@ apps/
 
 ### API Endpoints ✨
 
-| Method | Endpoint     | Description         |
-| ------ | ------------ | ------------------- |
-| GET    | /pokemon     | Fetch all Pokémon   |
-| GET    | /pokemon/:id | Fetch Pokémon by ID |
-| POST   | /pokemon     | Add a new Pokémon   |
-| PUT    | /pokemon/:id | Update a Pokémon    |
-| DELETE | /pokemon/:id | Delete a Pokémon    |
+| Method | Endpoint       | Description           | Parameters                           |
+| ------ | -------------- | --------------------- | ------------------------------------ |
+| GET    | /pokemon       | Fetch all Pokémons    |                                      |
+| GET    | /pokemon/:name | Fetch Pokémon by name |                                      |
+| POST   | /pokedex       | Add a new Pokédex     | { name: string; pokemons: string[] } |
+| PUT    | /pokedex/:id   | Update a Pokédex      | { name: string; pokemons: string[] } |
+| DELETE | /pokedex/:id   | Delete a Pokédex      |                                      |
 
 ---
 
