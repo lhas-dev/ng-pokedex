@@ -1,7 +1,12 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { PokedexService } from './pokedex.service';
 
 export interface CreatePokedexDto {
+  name: string;
+  pokemons: string[];
+}
+
+export interface UpdatePokedexDto {
   name: string;
   pokemons: string[];
 }
@@ -13,6 +18,11 @@ export class PokedexController {
   @Post()
   create(@Body() createDto: CreatePokedexDto) {
     return this.pokedexService.create(createDto);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateDto: UpdatePokedexDto) {
+    return this.pokedexService.update(parseInt(id), updateDto);
   }
 
   @Get()
