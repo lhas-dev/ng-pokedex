@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
+import { SharedModule } from "../shared/shared.module";
 
 @Component({
-  template: `<h1>Welcome to Pokédex aee!</h1>`,
+  imports: [SharedModule],
+  template: `<app-header />`,
 })
 export class HomeComponent {}
