@@ -3,6 +3,6 @@ import { SharedModule } from "../shared/shared.module";
 
 @Component({
   imports: [SharedModule],
-  template: `<app-header />`,
+  templateUrl: "./home.template.html",
 })
 export class HomeComponent {}
