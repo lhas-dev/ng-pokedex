@@ -5,7 +5,7 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="flex flex-col gap-2">
-      <label for="name" class="text-sm font-bold">Name</label>
+      <label for="name" class="text-sm font-bold">Pokedex Name</label>
       <input
         type="text"
         id="name"
@@ -18,24 +18,36 @@
       >
         Name is required
       </div>
-      <label for="pokemons" class="text-sm font-bold">Pokemons</label>
-      <div
-        class="w-full h-[200px] overflow-y-auto border border-neutral-200 rounded-md p-2"
-        (scroll)="onScroll($event)"
-      >
-        <div *ngFor="let pokemon of pokemons" class="flex items-center gap-2">
+      <div class="w-full h-[200px] overflow-y-auto" (scroll)="onScroll($event)">
+        <div class="sticky top-0 backdrop-blur-xs py-4 mb-2">
           <input
-            type="checkbox"
-            id="pokemon-{{ pokemon.name }}"
-            [value]="pokemon.name"
-            (change)="onCheckboxChange($event)"
+            type="text"
+            class="w-full text-md bg-white font-light px-2 py-1 border border-neutral-200 rounded-md drop-shadow-md"
+            placeholder="Search pokemons here"
+            (input)="onSearch($event)"
           />
-          <label
-            for="pokemon-{{ pokemon.name }}"
-            class="flex items-center gap-2"
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div
+            *ngFor="let pokemon of pokemons"
+            class="flex items-center gap-2 px-3"
           >
-            <span class="text-sm font-light">{{ pokemon.name }}</span>
-          </label>
+            <input
+              type="checkbox"
+              [checked]="form.get('selectedPokemons')?.value.includes(pokemon.name)"
+              id="pokemon-{{ pokemon.name }}"
+              [value]="pokemon.name"
+              (change)="onCheckboxChange($event)"
+            />
+            <label
+              for="pokemon-{{ pokemon.name }}"
+              class="flex items-center gap-2"
+            >
+              <span class="text-sm font-light capitalize"
+                >{{ pokemon.name }}</span
+              >
+            </label>
+          </div>
         </div>
       </div>
       <button
