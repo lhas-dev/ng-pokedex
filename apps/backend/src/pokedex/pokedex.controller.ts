@@ -38,6 +38,11 @@ export class PokedexController {
     return this.pokedexService.findAll();
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.pokedexService.findOne(parseInt(id));
+  }
+
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.pokedexService.delete(parseInt(id));

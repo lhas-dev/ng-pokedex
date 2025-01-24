@@ -2,12 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
-
-interface Pokedex {
-  id: number;
-  name: string;
-  pokemons: string[];
-}
+import { Pokedex } from "@frontend/typings";
 
 @Component({
   selector: "app-pokedex-list",
