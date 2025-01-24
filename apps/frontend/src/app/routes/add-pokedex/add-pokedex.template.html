@@ -1,0 +1,50 @@
+<app-header />
+
+<div class="container mx-auto">
+  <h2 class="text-2xl font-bold my-5">Add New Pokedex</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="flex flex-col gap-2">
+      <label for="name" class="text-sm font-bold">Name</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="border border-neutral-200 rounded-md p-2"
+      />
+      <div
+        *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+        class="text-red-500 text-sm"
+      >
+        Name is required
+      </div>
+      <label for="pokemons" class="text-sm font-bold">Pokemons</label>
+      <div
+        class="w-full h-[200px] overflow-y-auto border border-neutral-200 rounded-md p-2"
+        (scroll)="onScroll($event)"
+      >
+        <div *ngFor="let pokemon of pokemons" class="flex items-center gap-2">
+          <input
+            type="checkbox"
+            id="pokemon-{{ pokemon.name }}"
+            [value]="pokemon.name"
+            (change)="onCheckboxChange($event)"
+          />
+          <label
+            for="pokemon-{{ pokemon.name }}"
+            class="flex items-center gap-2"
+          >
+            <span class="text-sm font-light">{{ pokemon.name }}</span>
+          </label>
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="form.invalid"
+        class="disabled:opacity-50 disabled:cursor-not-allowed bg-neutral-900 hover:bg-neutral-800 transition-all duration-300 text-white rounded-md p-2 cursor-pointer"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
