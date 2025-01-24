@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Pokedex } from "@frontend/typings";
 import { ActivatedRoute } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { environment } from "@frontend/environments/environment";
 
 @Component({
   selector: "app-view-pokedex",
@@ -24,7 +25,7 @@ export class ViewPokedexComponent {
 
   ngOnInit() {
     this.http
-      .get<Pokedex>(`http://localhost:3000/pokedex/${this.id}`)
+      .get<Pokedex>(`${environment.apiUrl}/pokedex/${this.id}`)
       .subscribe((response) => {
         this.pokedex = response;
       });

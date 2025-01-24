@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { environment } from "@frontend/environments/environment";
 import { Pokedex } from "@frontend/typings";
 
 @Component({
@@ -17,7 +18,7 @@ export class PokedexListComponent {
 
   ngOnInit() {
     this.http
-      .get<Pokedex[]>("http://localhost:3000/pokedex")
+      .get<Pokedex[]>(`${environment.apiUrl}/pokedex`)
       .subscribe((response) => {
         this.pokedexes = response;
       });

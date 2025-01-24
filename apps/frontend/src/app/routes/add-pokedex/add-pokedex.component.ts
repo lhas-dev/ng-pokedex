@@ -16,6 +16,7 @@ import { Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { switchMap } from "rxjs/operators";
 import { of, Subscription, timer } from "rxjs";
+import { environment } from "@frontend/environments/environment";
 
 @Component({
   selector: "app-add-pokedex",
@@ -53,7 +54,7 @@ export class AddPokedexComponent {
       .get<{
         results: Pokemon[];
       }>(
-        `https://pokeapi.co/api/v2/pokemon?limit=${this.limit}&offset=${this.offset}`
+        `${environment.apiUrl}/pokemon?limit=${this.limit}&offset=${this.offset}`
       )
       .subscribe((pokemons) => {
         this.pokemons = [...this.pokemons, ...pokemons.results];
@@ -104,7 +105,7 @@ export class AddPokedexComponent {
           return this.http
             .get<{
               results: Pokemon[];
-            }>(`https://pokeapi.co/api/v2/pokemon?limit=1500`)
+            }>(`${environment.apiUrl}/pokemon?limit=1500`)
             .pipe(
               map((response) => ({
                 results: response.results.filter((pokemon) =>
@@ -123,13 +124,12 @@ export class AddPokedexComponent {
   onSubmit() {
     if (this.form.valid) {
       this.http
-        .post<Pokedex>("http://localhost:3000/pokedex", {
+        .post<Pokedex>(`${environment.apiUrl}/pokedex`, {
           name: this.form.value.name,
           pokemons: this.selectedPokemons.value,
         })
         .subscribe((response) => {
           this.router.navigate(["/pokedex", response.id]);
-          console.log("Form Submitted!", response);
         });
     }
   }
