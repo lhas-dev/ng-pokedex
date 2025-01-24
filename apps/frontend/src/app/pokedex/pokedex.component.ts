@@ -3,11 +3,12 @@ import { HeaderComponent } from "../shared/header/header.component";
 import { HttpClient } from "@angular/common/http";
 import { Pokedex } from "@frontend/typings";
 import { ActivatedRoute } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-pokedex",
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, CommonModule],
   templateUrl: "./pokedex.template.html",
 })
 export class PokedexComponent {
@@ -25,6 +26,7 @@ export class PokedexComponent {
     this.http
       .get<Pokedex>(`http://localhost:3000/pokedex/${this.id}`)
       .subscribe((response) => {
+        console.log(response);
         this.pokedex = response;
       });
   }
