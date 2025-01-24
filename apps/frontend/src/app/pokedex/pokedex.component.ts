@@ -26,7 +26,6 @@ export class PokedexComponent {
     this.http
       .get<Pokedex>(`http://localhost:3000/pokedex/${this.id}`)
       .subscribe((response) => {
-        console.log(response);
         this.pokedex = response;
       });
   }
