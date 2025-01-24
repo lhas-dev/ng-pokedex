@@ -1,11 +1,11 @@
+![Pokémon Reference](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
+
 # Pokédex
 
 Welcome to **Pokédex**, a monorepo project built to showcase a comprehensive Pokédex application. This repository houses two applications:
 
 1. **Frontend**: Built with Angular.
 2. **Backend**: Powered by NestJS, with SQLite as the database.
-
-![Pokémon Reference](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
 
 ---
 
@@ -45,19 +45,19 @@ Welcome to **Pokédex**, a monorepo project built to showcase a comprehensive Po
 
 ### Frontend
 
-![Angular](https://angular.io/assets/images/logos/angular/angular.svg)
+![Angular](https://angular.io/assets/images/logos/angular/angular.svg){width=60px}
 
 ### Backend
 
-![NestJS](https://nestjs.com/img/logo_text.svg)
+![NestJS](https://nestjs.com/img/logo_text.svg){width=60px}
 
 ### Database
 
-![SQLite](https://sqlite.org/images/sqlite370_banner.gif)
+![SQLite](https://sqlite.org/images/sqlite370_banner.gif){width=60px}
 
 ### Monorepo Management
 
-![Yarn](https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png)
+![Yarn](https://raw.githubusercontent.com/yarnpkg/assets/master/yarn-kitten-full.png){width=60px}
 
 ---
 
