@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { PokedexService } from './pokedex.service';
 
 export interface CreatePokedexDto {
@@ -13,5 +13,10 @@ export class PokedexController {
   @Post()
   create(@Body() createDto: CreatePokedexDto) {
     return this.pokedexService.create(createDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.pokedexService.findAll();
   }
 }
