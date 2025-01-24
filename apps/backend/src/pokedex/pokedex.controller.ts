@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { PokedexService } from './pokedex.service';
 
 export interface CreatePokedexDto {
@@ -28,5 +36,10 @@ export class PokedexController {
   @Get()
   findAll() {
     return this.pokedexService.findAll();
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.pokedexService.delete(parseInt(id));
   }
 }

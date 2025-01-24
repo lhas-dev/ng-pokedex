@@ -37,4 +37,12 @@ export class PokedexService {
   async findAll() {
     return Pokedex.find();
   }
+
+  async delete(id: number) {
+    const pokedex = await Pokedex.findOneBy({ id });
+    if (!pokedex) {
+      throw new Error('Pokedex not found');
+    }
+    await pokedex.remove();
+  }
 }
